@@ -5,38 +5,51 @@ import tree._
   */
 object Main {
   def main(args: Array[String]) = {
-    println("testing")
 
-    val node0 = new Node(0)
-    var tree = new Tree[Int](node0)
+    println("Tree")
 
-    val node1 = new Node(1)
-    tree.addNode(node1, node0)
+    val treeNode0 = new Node(0)
+    var tree = new Tree[Int](treeNode0)
 
-    val node2 = new Node(2)
-    tree.addNode(node2, node0)
+    val treeNode1 = new Node(1)
+    tree.addNode(treeNode1, treeNode0)
 
-    val node3 = new Node(3)
-    tree.addNode(node3, node1)
+    val treeNode2 = new Node(2)
+    tree.addNode(treeNode2, treeNode0)
 
-    val node4 = new Node(4)
-    tree.addNode(node4, node1)
+    val treeNode3 = new Node(3)
+    tree.addNode(treeNode3, treeNode1)
+
+    val treeNode4 = new Node(4)
+    tree.addNode(treeNode4, treeNode1)
 
     tree.print()
+    val treeNodeWithVal4 = tree.find(4)
+    println("4 contained in Tree node: "+treeNodeWithVal4)
+    val treeNodeWithVal5 = tree.find(5)
+    println("5 contained in Tree node: "+treeNodeWithVal5)
+
+
+
 
     println("Binary Search Tree")
-    val node01 = new Node(0)
-    var bst = new BinarySearchTree[Int](node01)
+    val BSTNode0 = new Node(0)
+    var bst = new BinarySearchTree[Int](BSTNode0)
 
-    val node11 = new Node(1)
-    bst.addNode(node1)
+    val BSTNode1 = new Node(1)
+    bst.addNode(BSTNode1)
 
-    val noden11 = new Node(-1)
-    bst.addNode(noden11)
+    val BSTNoden1 = new Node(-1)
+    bst.addNode(BSTNoden1)
 
-    val noden31 = new Node(3)
-    bst.addNode(noden31)
+    val BSTNoden3 = new Node(3)
+    bst.addNode(BSTNoden3)
 
     bst.print()
+
+    val BSTNodeWithVal3 = bst.find(3)
+    println("3 contained in BST Node: "+ BSTNodeWithVal3)
+    val BSTNodeWithVal6 = bst.find(6)
+    println("6 contained in BST Node: "+ BSTNodeWithVal6)
   }
 }

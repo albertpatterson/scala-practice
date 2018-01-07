@@ -15,6 +15,29 @@ class BinarySearchTree[T <% Ordered[T]](head: Node[T]) extends AbstractTree[T](h
     addNode(newNode, head)
   }
 
+
+  def find(value: T): Node[T] = {
+    find(value, head)
+  }
+
+  private def find(value: T, node: Node[T]): Node[T] = {
+    if(node.value==value){
+      node
+    }else if(node.value>value){
+      if(node.children(0)!=null){
+        find(value, node.children(0))
+      }else{
+        null
+      }
+    }else{
+      if(node.children(1)!=null){
+        find(value, node.children(1))
+      }else{
+        null
+      }
+    }
+  }
+
   private def addNode(newNode: Node[T], refNode: Node[T]): Unit = {
 
 

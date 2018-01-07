@@ -45,7 +45,7 @@ class AbstractTree[T](head: Node[T]) {
   }
 
   // dfs
-  private def depthFirstSearch(node: Node[T], continue:()=>Boolean, operate: Node[T]=>Unit): Unit = {
+  protected def depthFirstSearch(node: Node[T], continue:()=>Boolean, operate: Node[T]=>Unit): Unit = {
     if(node!=null){
       operate(node)
 
@@ -58,7 +58,7 @@ class AbstractTree[T](head: Node[T]) {
   }
 
   // bfs
-  private def breadthFirstSearch(node: Node[T], continue:()=>Boolean, operate: Node[T]=>Unit): Unit = {
+  protected def breadthFirstSearch(node: Node[T], continue:()=>Boolean, operate: Node[T]=>Unit): Unit = {
     //  , visited: Set[Node[T]], queue: Queue[Node[T]]): Unit = {
       val queue: Queue[Node[T]] = Queue(node)
 
